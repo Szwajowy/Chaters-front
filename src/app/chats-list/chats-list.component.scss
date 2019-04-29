@@ -1,0 +1,138 @@
+@import '../../variables.scss';
+
+.friends-list {
+    margin: 1.2em 0;
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        display: flex;
+        flex-flow: row;
+
+        .friends-container {
+            max-width: calc(100% - #{$image-size});
+
+            display: flex;
+            flex-flow: row;
+
+            overflow-x: auto;
+        }
+
+        a {
+            $animation-duration: 150ms;
+            $animation-type: ease-in-out;
+
+            p {
+                transition: all $animation-duration $animation-type;
+            }
+
+            .add-friend {
+                img {
+                    transition: all $animation-duration $animation-type;
+                }
+            }
+        }
+
+        a:hover {
+            p {
+                color: $app-accent;
+            }
+
+            .add-friend {
+                img {
+                    width: 60%;
+                    height: 60%;
+                }
+            }
+        }
+
+        li {
+            width: $image-size;
+
+            .avatar-cutout {
+                width: $image-size;
+                height: $image-size;
+                margin: 0 auto;
+
+                background: $chat-background;
+                border-radius: 1000px;
+                overflow: hidden;
+
+                position: relative;
+            }
+
+            p {
+                padding: 0;
+                margin: 0.6em 0 0;
+
+                color: $text-color;
+                font-size: 0.6em;
+                font-weight: 600;
+                text-align: center;
+            }
+            
+            &.friend {
+                margin-right: 1.2em;
+
+                &.active {
+                    .avatar::after {
+                        background: $status-active-color;
+                    }
+                }
+
+                &.away {
+                    .avatar::after {
+                        background: $status-away-color;
+                    }
+                }
+
+                &.inactive {
+                    .avatar::after {
+                        background: $status-inactive-color;
+                    }
+                }
+
+                .avatar {
+                    position: relative;
+
+                    &::after {
+                        content: '';
+                        height: $status-size;
+                        width: $status-size;
+    
+                        border-radius: 1000px;
+    
+                        display: block;
+                        position: absolute;
+                        bottom: 0;
+                        right: 0;
+                    }
+                }
+
+                img {
+                    max-width: 110%;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+
+                    transform: translate(-50%, -50%);
+                }
+            }
+
+            &.add-friend {
+                img {
+                    width: 40%;
+                    height: 40%;
+
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+
+                    transform: translate(-50%, -50%);
+                }
+            }
+        }
+    }
+}

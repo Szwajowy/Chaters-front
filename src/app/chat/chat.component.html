@@ -1,0 +1,38 @@
+<div *ngIf="chat">
+  <header>
+    <h1>{{ chat.name }}</h1>
+    <div class="chat-settings">
+        <small>Ustawienia</small>
+        <ul>
+          <li><a href="">Kolor chatu</a></li>
+          <li><a href="">Dodaj do chatu</a></li>
+          <li class="more"><a href="">Więcej..</a></li>
+        </ul>
+    </div>
+  </header>
+
+  <div id="chat-container">
+    <div id="messages-list">
+      <div class="message" *ngFor="let message of chat.messages" [ngClass]="{'my-message': message.sendedBy.id === 1}">
+          <div class="box">
+            {{ message.text }}
+          </div>
+          <div class="info">
+            <div class="author">
+              <div class="avatar">
+                <img src="" alt="" />
+              </div>
+              {{ message.sendedBy.forename }} {{ message.sendedBy.surname }}
+            </div>
+            <div class="time">
+                {{ message.sendedAt.date }}
+            </div>
+          </div>
+        </div>  
+      </div>
+    <div id="send-message">
+      <textarea type="text" id="message-text" ></textarea>
+      <input type="submit" id="message-submit" value="Wyślij" />
+    </div>
+  </div>
+</div>

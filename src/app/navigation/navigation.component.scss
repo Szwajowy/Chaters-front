@@ -1,0 +1,60 @@
+@import '../../variables.scss';
+
+.container {
+    width: calc(#{$app-width} - 2.8em);
+    padding: 1.4em;
+
+    display: grid;
+    grid-template-columns: 30% auto;
+}
+
+header {
+    width: 100%;
+
+    .logo {
+        color: $headings-color;
+        font-size: 1.4em;
+        font-weight: 400;
+        line-height: 1.3em;
+
+        span {
+            color: $app-accent;
+            font-size: 1.7em;
+            font-weight: 600;
+        }
+    }
+
+    nav {
+        justify-self: right;
+        align-self: center;
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+            li {
+                float: left;
+                
+                &:not(:last-of-type) {
+                    margin-right: 2.4em;
+                }
+
+                a {
+                    $animation-duration: 150ms;
+                    $animation-type: ease-in-out;
+
+                    color: $headings-color;
+                    font-weight: 600;
+                    font-size: 1.0em;
+
+                    transition: all $animation-duration $animation-type;
+
+                    &:hover {
+                        color: $app-accent;
+                    }
+                }
+            }
+        }
+    }
+}

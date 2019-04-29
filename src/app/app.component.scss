@@ -1,0 +1,83 @@
+@import '../variables.scss';
+
+.container {
+    min-height: calc(100% - 16.2em);
+    padding: 0 0 9.2em;
+
+    background: $container-background;
+    border-radius: 20px;
+
+    position: relative;
+
+    section {
+        padding: 1.4em $section-side-padding 0;
+    }
+
+    footer {
+        width: calc(100% - 2*#{$section-side-padding});
+        padding: 2.4em $section-side-padding;
+    
+        color: $text-color;
+        background: $footer-background;
+        text-align: center;
+        border-radius: 20px 20px 0 0;
+
+        position: absolute;
+        bottom: 0;
+        left: 0;
+
+        p {
+            padding: 0;
+            margin: 0;
+        }
+    }
+}
+
+
+.toggle-container {
+    width: 52px;
+    margin: 0 auto;
+
+    input[type=checkbox]{
+        height: 0;
+        width: 0;
+        visibility: hidden;
+    }
+
+    label {
+        cursor: pointer;
+        text-indent: -9999px;
+        width: 52px;
+        height: 27px;
+        background: $background;
+        float: right;
+        border-radius: 100px;
+        position: relative;
+    }
+    
+    label:after {
+        content: '';
+        position: absolute;
+        top: 3px;
+        left: 3px;
+        width: 20px;
+        height: 20px;
+        background: $text-color;
+        border-radius: 90px;
+        transition: 0.3s;
+    }
+    
+    input:checked + label {
+        background: $app-accent;
+    }
+    
+    input:checked + label:after {
+        left: calc(100% - 5px);
+        transform: translateX(-100%);
+    }
+    
+    label:active:after {
+        width: 45px;
+    }
+
+}

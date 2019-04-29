@@ -1,0 +1,60 @@
+html[data-theme='light'] {
+    --main-bg: #DDDDDD;
+    --container-bg: #FFFFFF;
+    --chat-bg: #E9E9E9;
+    --message-bg: #DDDDDD;
+    --footer-bg: var(--chat-bg);
+
+    --headings-color: #555555;
+    --text-color: #666666;
+    --message-text: #666666;
+}
+
+html[data-theme='dark'] {
+    --main-bg: #333333;
+    --container-bg: #383838;
+    --chat-bg: #434343;
+    --message-bg: #484848;
+    --footer-bg: var(--chat-bg);
+
+    --headings-color: #EEEEEE;
+    --text-color: #BBBBBB;
+    --message-text: #BBBBBB;
+}
+
+// Main colors
+$app-accent: #CC2929;
+
+// Background colors
+$background: var(--main-bg);
+$container-background: var(--container-bg);
+$chat-background: var(--chat-bg);
+$footer-background: var(--footer-bg);
+
+// Text colors
+$headings-color: var(--headings-color);
+$text-color: var(--text-color);
+
+// Size/padding/margin
+$app-width: 800px;
+$section-side-padding: 1.4em;
+
+// Friend list - avatar
+$image-size: 90px;
+
+// Friend list - status
+$status-size: 18px;
+$status-active-color: #97D289;
+$status-away-color: #E86F6F;
+$status-inactive-color: #B5B5B5;
+
+// Chat - main colors
+$msg-bg: var(--message-bg);
+$msg-color: var(--message-text);
+$chat-accent: #921CD5;
+
+// Chat - sender avatar
+$avatar-size: 18px;
+
+// Profile info - avatar size
+$profile-avatar-size: 80px;

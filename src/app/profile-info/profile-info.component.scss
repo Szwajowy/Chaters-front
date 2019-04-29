@@ -1,0 +1,73 @@
+@import '../../variables.scss';
+
+.profile-info {
+    padding: 1.2em 0;
+
+    display: grid;
+    grid-template-columns: 40% 30% 30%;
+    align-items: center;
+
+    .profile-name {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+
+        img {
+            width: $profile-avatar-size;
+            height: $profile-avatar-size;
+
+            background: $headings-color;
+            border-radius: 40px;
+        }
+
+        .id-group {
+            margin-left: 1.2em;
+
+            h2, h3 {
+                margin: 0;
+                padding: 0;
+            }
+
+            h2 {
+                color: $headings-color;
+                font-size: 1.4em;
+                font-weight: 600;
+            }
+
+            h3 {
+                color: $text-color;
+                font-size: 0.8em;
+                font-weight: 600;
+            }
+        }
+    }
+
+    .profile-stats, .joined-on {
+        color: $text-color;
+        font-size: 0.9em;
+        text-align: center;
+
+        span {
+            color: $headings-color;
+            font-weight: 600;
+        }
+    }
+}
+
+.profile-about {
+    h2 {
+        padding: 0 0 0.2em;
+        margin: 0;
+
+        font-size: 1.4em;
+        font-weight: 600;
+    }
+
+    p {
+        padding: 0;
+        margin: 0;
+
+        color: $text-color;
+        font-size: 0.9em;
+    }
+}
